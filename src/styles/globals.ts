@@ -32,7 +32,7 @@ html, :root{
 }
 
 body {
-  ${tw`antialiased w-screen bg-gray-800 text-gray-700 overflow-x-hidden font-body`};
+  ${tw`antialiased w-screen bg-white text-gray-700 overflow-x-hidden font-body`};
 }
 
 a {
@@ -84,6 +84,9 @@ section {
 
 .orb_canvas {
   ${tw`absolute top-0 left-0 w-full pointer-events-none`};
+  background: #FFFFFF;
+  background: -webkit-linear-gradient(360deg, #DAB8DB 0%, #FFFFFF 100%);
+  background: -moz-linear-gradient(360deg, #DAB8DB 0%, #FFFFFF 100%);
   background: linear-gradient(360deg, #DAB8DB 0%, #FFFFFF 87.29%);
   z-index: -1;
 }
