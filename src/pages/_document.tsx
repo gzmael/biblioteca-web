@@ -42,8 +42,8 @@ class MyDocument extends Document {
       <Html lang="pt-br">
         <Head>
           <meta name="robots" content="index" />
-          <meta name="theme-color" content="#1dac99" />
-          <meta name="msapplication-TileColor" content="#1dac99" />
+          <meta name="theme-color" content="#833184" />
+          <meta name="msapplication-TileColor" content="#833184" />
           <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
           <meta name="MobileOptimized" content="320" />
           <meta name="HandheldFriendly" content="True" />

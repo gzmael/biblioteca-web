@@ -1,13 +1,14 @@
 import React from 'react'
 
 import { SEO } from '@components/SEO'
+import { Sections } from '@components/Sections'
 import { Main } from '@layouts/Main'
 
 const Home = () => {
   return (
     <Main>
       <SEO title="Outro" />
-      <h1>Olá Esse é um Template</h1>
+      <Sections />
     </Main>
   )
 }
