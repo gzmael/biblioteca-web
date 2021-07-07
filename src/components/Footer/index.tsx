@@ -8,13 +8,15 @@ const Footer = () => {
   const date = new Date().getFullYear()
   return (
     <Container>
-      © Copyright {date}
-      {' - '}
-      {Config.defaultTitle}. Criado com{' '}
-      <span role="img" aria-label="Love">
-        ♥
-      </span>{' '}
-      por <a href="https://baitasolucoes.com.br">Baita Soluções</a>.
+      <p>
+        © Copyright {date}
+        {' - '}
+        {Config.defaultTitle}. Desenvolvido com{' '}
+        <span role="img" aria-label="Love">
+          ♥
+        </span>{' '}
+        por <a href="https://baitasolucoes.com.br">Baita Soluções</a>.
+      </p>
     </Container>
   )
 }

@@ -2,6 +2,7 @@
 import React from 'react'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Script from 'next/script'
 
 import { Container, Content } from './styles'
@@ -13,15 +14,21 @@ const Hero = () => (
         <h1>Cupons de Descontos para todas as manias!</h1>
         <div className="buttons">
           <a href="https://google.com">
-            <img
+            <Image
               src="/assets/images/google-play.png"
               alt="Google Play Button"
+              layout="fill"
+              objectFit="contain"
+              objectPosition="center"
             />
           </a>
           <a href="https://apple.com">
-            <img
+            <Image
               src="/assets/images/apple-store.png"
               alt="Apple Store Button"
+              layout="fill"
+              objectFit="contain"
+              objectPosition="center"
             />
           </a>
         </div>

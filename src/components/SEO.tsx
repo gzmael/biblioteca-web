@@ -18,7 +18,7 @@ const SEO = ({ title, description, image, url }: IMetaProps) => (
       <meta charSet={Config.locale} key="charset" />
       <meta
         name="viewport"
-        content="width=device-width,initial-scale=1"
+        content="width=device-width,initial-scale=1,user-scalable=no"
         key="viewport"
       />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" key="apple" />

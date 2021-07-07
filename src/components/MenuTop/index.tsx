@@ -25,6 +25,7 @@ const MenuTop = () => {
             src="/assets/logo-h.svg"
             alt="Logo Desconto Mania"
             layout="fill"
+            objectFit="contain"
           />
         </a>
       </Link>

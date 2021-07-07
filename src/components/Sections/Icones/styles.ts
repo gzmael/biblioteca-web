@@ -1,7 +1,7 @@
 import tw, { styled } from 'twin.macro'
 
 export const Container = styled.section`
-  ${tw`px-4 py-8 max-w-screen-lg mx-auto flex flex-col items-center justify-center space-y-16 text-gray-600`}
+  ${tw`px-4 py-8 max-w-screen-lg mx-auto flex flex-col items-center justify-center space-y-16 text-gray-600 bg-white`}
 `
 
 export const Header = styled.header`
@@ -17,20 +17,20 @@ export const Header = styled.header`
 `
 
 export const Icons = styled.ul`
-  ${tw`list-none grid grid-cols-1 md:grid-cols-2 gap-4`};
+  ${tw`list-none grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-screen-md`};
 
   li {
-    ${tw`flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center items-center`};
+    ${tw`flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center md:justify-start items-center`};
 
     .icon {
-      ${tw`w-24 h-24 flex items-center justify-center text-pink-500`};
+      ${tw`w-24 h-24 flex items-center justify-center text-pink-500 `};
     }
 
     .texts {
-      ${tw`text-center md:text-left leading-5 text-gray-600`};
+      ${tw`text-center text-sm md:text-left leading-5 text-gray-600`};
 
       h4 {
-        ${tw`text-purple-500 font-extrabold text-lg leading-7 font-bold font-body`};
+        ${tw`text-purple-500 font-extrabold text-xl leading-7 font-bold font-body`};
       }
     }
   }

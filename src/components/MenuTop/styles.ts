@@ -1,15 +1,15 @@
 import tw, { styled } from 'twin.macro'
 
 export const Container = styled.header`
-  ${tw`relative flex justify-between items-center max-w-screen-lg mx-auto py-1 `}
+  ${tw`relative w-full flex justify-between items-center max-w-screen-lg mx-auto py-1 bg-white`}
 
   .logo {
-    ${tw`w-48 md:w-52 flex items-center justify-center outline-none p-2`}
+    ${tw`w-48 h-14 md:w-52 flex items-center justify-center outline-none px-2 relative`}
     > div {
       ${tw`w-48 md:w-52`}
     }
     img {
-      ${tw`object-contain w-48 md:w-52`}
+      ${tw`object-contain`}
     }
   }
 

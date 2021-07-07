@@ -21,6 +21,7 @@ const Usuario = () => {
             alt="Garota com smartphone usando o Desconto Mania"
             objectFit="contain"
             layout="fill"
+            quality={85}
           />
         </Girl>
       </Content>

@@ -32,7 +32,7 @@ html, :root{
 }
 
 body {
-  ${tw`antialiased w-full text-gray-700 overflow-x-hidden font-body`};
+  ${tw`antialiased w-screen bg-gray-800 text-gray-700 overflow-x-hidden font-body`};
 }
 
 a {
@@ -57,10 +57,9 @@ a:hover {
   background: -webkit-linear-gradient(to top, #833184 0%, #E9018C 100%);
   background: -moz-linear-gradient(to top, #833184 0%, #E9018C 100%);
   background: linear-gradient(to top, #833184 0%, #E9018C 100%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .content h1 {
@@ -88,7 +87,7 @@ section {
   background: linear-gradient(360deg, #DAB8DB 0%, #FFFFFF 87.29%);
   z-index: -1;
 }
-/* Not too many browser support this yet but it's good to add! */
+
 @media (prefers-contrast: high) {
   .orb_canvas {
     display: none;
