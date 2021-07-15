@@ -3,6 +3,7 @@ import React from 'react'
 import { ComoUsar } from './ComoUsar'
 import { Hero } from './Hero'
 import { Icones } from './Icones'
+import { Parceiros } from './Parceiros'
 import { Usuario } from './Usuario'
 
 const Sections = () => {
@@ -12,6 +13,7 @@ const Sections = () => {
       <Icones />
       <Usuario />
       <ComoUsar />
+      <Parceiros />
     </>
   )
 }

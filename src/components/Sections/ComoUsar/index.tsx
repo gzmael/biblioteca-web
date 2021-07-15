@@ -21,7 +21,7 @@ const ComoUsar = () => {
       opacity: 1,
       scale: 1,
       transition: {
-        delay: i * 0.3,
+        delay: i * 0.75,
         ease: 'easeOut',
         duration: 0.3
       }

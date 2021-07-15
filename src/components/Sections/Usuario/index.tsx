@@ -8,7 +8,7 @@ import { Container, Content, Texts, Girl } from './styles'
 
 const Usuario = () => {
   const { ref, inView } = useInView({
-    threshold: 0,
+    threshold: 0.2,
     delay: 300
   })
   const variantsText: Variants = {
@@ -16,7 +16,7 @@ const Usuario = () => {
       opacity: 1,
       x: 0,
       transition: {
-        delay: i * 0.2,
+        delay: i * 0.75,
         ease: 'easeOut',
         duration: 0.3
       }
@@ -29,7 +29,7 @@ const Usuario = () => {
       opacity: 1,
       x: 0,
       transition: {
-        delay: 0.6,
+        delay: 0.75 * 2,
         ease: 'easeOut',
         duration: 0.4
       }

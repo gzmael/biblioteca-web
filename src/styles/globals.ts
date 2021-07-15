@@ -79,7 +79,10 @@ a:hover {
 }
 
 section {
-  min-height: 600px;
+  min-height: 100vh;
+}
+section#hero {
+  min-height: calc(100vh - 8rem);
 }
 
 .orb_canvas {
