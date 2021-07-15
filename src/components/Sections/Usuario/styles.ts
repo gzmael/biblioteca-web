@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion'
 import tw, { styled } from 'twin.macro'
 
 export const Container = styled.section`
-  ${tw`flex flex-col items-center justify-end`}
+  ${tw`flex flex-col items-center justify-end overflow-hidden`}
   background: linear-gradient(358.11deg, #EC008C 1.58%, #833184 45.93%, #833184 98.44%);
   min-height: 26rem;
 `
@@ -21,6 +22,6 @@ export const Texts = styled.div`
     ${tw`leading-5 font-medium text-pink-200`}
   }
 `
-export const Girl = styled.div`
+export const Girl = styled(motion.div)`
   ${tw`h-96 flex flex-col justify-end items-center w-full md:w-1/2 relative`}
 `

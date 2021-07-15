@@ -1,7 +1,10 @@
 import tw, { styled } from 'twin.macro'
 
 export const Container = styled.section`
-  ${tw`px-4 py-8 max-w-screen-lg mx-auto flex flex-col items-center justify-center space-y-16 text-gray-600 bg-white`}
+  ${tw`px-4 py-8 max-w-screen-lg mx-auto flex flex-col items-center justify-center space-y-16 text-gray-600 bg-white relative`}
+`
+export const Button = styled.button`
+  ${tw`bg-white -mt-5 mx-auto w-40 h-10 flex items-center justify-center shadow-md rounded-full absolute top-0 text-purple-500 hover:text-pink-500 transition-all ease duration-300`}
 `
 
 export const Header = styled.header`

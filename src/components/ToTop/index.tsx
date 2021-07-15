@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { FiChevronUp } from 'react-icons/fi'
 import { animateScroll } from 'react-scroll'
 import tw from 'twin.macro'
@@ -38,23 +38,28 @@ const ToTop: React.FC = () => {
     }
   }, [lastY])
   return (
-    <motion.div
-      variants={variants}
-      animate={isView ? 'show' : 'hidden'}
-      transition={{ ease: 'easeInOut', duration: 0.5 }}
-      css={[tw`fixed right-4 z-20`]}
-    >
-      <ButtonScroll
-        type="button"
-        onClick={() =>
-          animateScroll.scrollToTop({
-            duration: 500
-          })
-        }
-      >
-        <FiChevronUp size={24} />
-      </ButtonScroll>
-    </motion.div>
+    <AnimatePresence>
+      {isView && (
+        <motion.div
+          variants={variants}
+          initial="hidden"
+          animate="show"
+          transition={{ ease: 'easeInOut', duration: 0.5 }}
+          css={[tw`fixed right-4 z-20`]}
+        >
+          <ButtonScroll
+            type="button"
+            onClick={() =>
+              animateScroll.scrollToTop({
+                duration: 500
+              })
+            }
+          >
+            <FiChevronUp size={24} />
+          </ButtonScroll>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }
 
