@@ -63,7 +63,7 @@ section {
 }
 
 section#hero {
-  min-height: calc(100vh - 8rem);
+  min-height: 600px;
 }
 
 `

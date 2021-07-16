@@ -28,17 +28,22 @@ const ComoUsar = () => {
     <Container id="como-usar" ref={ref}>
       <Content>
         <Header>
-          <h2>Como usar o Desconto Mania</h2>
+          <h2>Como Funciona?</h2>
         </Header>
         <Grid>
           <motion.li
             custom={0}
             animate={inView ? 'visible' : 'hidden'}
             variants={variants}
+            className="finding"
           >
             <div className="texts">
-              <h4>Baixe o Aplicativo</h4>
-              <p>Baixe gratuitamente o nosso app na App Store e Google Play.</p>
+              <h4>Domínio Público</h4>
+              <p>
+                Os livros que são sugeridos aqui em nossa página é de Domínio
+                Público e está disponibilizado para ser baixado e livro a
+                qualquer momento por qualquer pessoa.
+              </p>
             </div>
             <div className="icon">
               <Finding />
@@ -48,13 +53,17 @@ const ComoUsar = () => {
             custom={1}
             animate={inView ? 'visible' : 'hidden'}
             variants={variants}
+            className="authors"
           >
             <div className="icon">
               <Authors />
             </div>
             <div className="texts">
-              <h4>Cashback Exclusivos</h4>
-              <p>Receba dinheiro de volta durante o pagamento.</p>
+              <h4>Autores Locais</h4>
+              <p>
+                Nossa base também conta com livros autorais de personalidades de
+                Várzea Alegre.
+              </p>
             </div>
           </motion.li>
         </Grid>

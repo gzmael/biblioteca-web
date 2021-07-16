@@ -12,25 +12,31 @@ export const Header = styled.header`
   ${tw`flex flex-col space-y-2 items-center justify-center text-center`};
 
   h2 {
-    ${tw`text-purple-500 font-extrabold text-4xl leading-10 font-bold font-body`}
+    ${tw`font-extrabold text-4xl leading-10 font-bold font-body`}
   }
 `
 
 export const Grid = styled.ul`
-  ${tw`list-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-screen-md`};
+  ${tw`list-none flex flex-col w-full space-y-8 max-w-screen-md`};
 
   li {
-    ${tw`flex flex-col space-y-2 justify-center items-center`};
+    ${tw`flex flex-col sm:flex-row space-y-2 sm:space-x-8 justify-center items-center`};
 
+    &.finding {
+      ${tw`flex-col-reverse sm:flex-row`}
+    }
     .icon {
-      ${tw`h-auto flex items-center justify-center`};
+      ${tw`w-full sm:w-1/3 flex items-center justify-center`};
+      svg {
+        ${tw`w-full`}
+      }
     }
 
     .texts {
-      ${tw`text-center text-sm leading-5 text-gray-600`};
+      ${tw`w-full sm:w-1/2 text-center text-sm leading-5 text-gray-600`};
 
       h4 {
-        ${tw`text-purple-500 font-extrabold text-lg leading-7 font-bold font-body`};
+        ${tw`font-extrabold text-lg leading-7 font-bold font-body`};
       }
     }
   }

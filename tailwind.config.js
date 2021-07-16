@@ -15,7 +15,7 @@ module.exports = {
       '6xl': '4rem',
     },
     fontFamily: {
-      'body': ['Inter', 'sans-serif']
+      'body': ['Roboto', 'sans-serif']
     },
     extend: {
       colors: {

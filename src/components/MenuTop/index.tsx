@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { FiMenu, FiX } from 'react-icons/fi'
 import {
   IoLogoFacebook,
-  IoLogoInstagram,
-  IoLogoWhatsapp
+  IoMenu,
+  IoClose,
+  IoLogoInstagram
 } from 'react-icons/io5'
 
 import { Container } from './styles'
@@ -26,11 +26,12 @@ const MenuTop = () => {
             alt="Logo Secretaria da Cultura de Várzea Alegre"
             layout="fill"
             objectFit="contain"
+            objectPosition="center"
           />
         </a>
       </Link>
       <button type="button" onClick={handleButton}>
-        {viewMenu ? <FiX size={24} /> : <FiMenu size={24} />}
+        {viewMenu ? <IoClose size={36} /> : <IoMenu size={36} />}
       </button>
       <div className={viewMenu ? 'collapse show' : 'collapse'}>
         <nav>
@@ -60,11 +61,6 @@ const MenuTop = () => {
             <li>
               <a href="https://facebook.com">
                 <IoLogoInstagram size={24} />
-              </a>
-            </li>
-            <li>
-              <a href="https://facebook.com">
-                <IoLogoWhatsapp size={24} />
               </a>
             </li>
           </ul>
