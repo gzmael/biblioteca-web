@@ -22,8 +22,8 @@ const MenuTop = () => {
       <Link href="/">
         <a className="logo">
           <Image
-            src="/assets/logo-h.svg"
-            alt="Logo Desconto Mania"
+            src="/assets/images/logo-secretaria.svg"
+            alt="Logo Secretaria da Cultura de Várzea Alegre"
             layout="fill"
             objectFit="contain"
           />
@@ -36,18 +36,18 @@ const MenuTop = () => {
         <nav>
           <ul className="menu_links">
             <li>
-              <Link href="/termos">
+              <Link href="/como">
                 <a>Como Funciona?</a>
               </Link>
             </li>
             <li>
-              <Link href="/politica/">
+              <Link href="/parceiros">
                 <a>Parceiros</a>
               </Link>
             </li>
             <li>
               <Link href="/politica/">
-                <a>Fale Conosco</a>
+                <a>Política de Privacidade</a>
               </Link>
             </li>
           </ul>

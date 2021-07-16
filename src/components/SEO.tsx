@@ -42,24 +42,24 @@ const SEO = ({ title, description, image, url }: IMetaProps) => (
       <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     </Head>
     <NextSeo
-      title={title || 'Desconto Mania'}
-      description={description || 'Mania de comprar com descontos'}
+      title={title || Config.defaultTitle}
+      description={description || Config.description}
       canonical={Config.canonical}
       openGraph={{
-        title: title || 'Desconto Mania',
-        description: description || 'Mania de comprar com descontos',
+        title: title || Config.defaultTitle,
+        description: description || Config.description,
         url: url || Config.canonical,
         locale: Config.locale,
         site_name: Config.defaultTitle,
         images: [
           {
             url: image || '/android-chrome-512x512.png',
-            alt: 'Imagem Meu Desconto Mania'
+            alt: 'Logo Biblioteca Pública Municipal de Várzea Alegre'
           }
         ]
       }}
       twitter={{
-        handle: '@meudescontomania',
+        handle: '@jezmael',
         site: '@site',
         cardType: 'summary_large_image'
       }}

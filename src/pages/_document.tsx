@@ -42,8 +42,8 @@ class MyDocument extends Document {
       <Html lang="pt-br">
         <Head>
           <meta name="robots" content="index" />
-          <meta name="theme-color" content="#833184" />
-          <meta name="msapplication-TileColor" content="#833184" />
+          <meta name="theme-color" content="#fff" />
+          <meta name="msapplication-TileColor" content="#fff" />
           <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
           <meta name="MobileOptimized" content="320" />
           <meta name="HandheldFriendly" content="True" />
@@ -57,7 +57,7 @@ class MyDocument extends Document {
             crossOrigin="true"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
             rel="stylesheet"
           />
         </Head>
