@@ -43,7 +43,7 @@ class MyDocument extends Document {
         <Head>
           <meta name="robots" content="index" />
           <meta name="theme-color" content="#fff" />
-          <meta name="msapplication-TileColor" content="#fff" />
+          <meta name="msapplication-TileColor" content="#00aba9" />
           <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
           <meta name="MobileOptimized" content="320" />
           <meta name="HandheldFriendly" content="True" />

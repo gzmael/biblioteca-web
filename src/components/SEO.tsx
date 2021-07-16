@@ -36,10 +36,10 @@ const SEO = ({ title, description, image, url }: IMetaProps) => (
         href="/favicon-16x16.png"
         key="icon16"
       />
+      <link rel="manifest" href="/site.webmanifest" />
       <link rel="icon" href="/favicon.ico" key="favicon" />
-
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-      <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     </Head>
     <NextSeo
       title={title || Config.defaultTitle}
