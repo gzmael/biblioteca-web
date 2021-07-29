@@ -44,6 +44,7 @@ const ToTop: React.FC = () => {
           variants={variants}
           initial="hidden"
           animate="show"
+          exit="hidden"
           transition={{ ease: 'easeInOut', duration: 0.5 }}
           css={[tw`fixed right-4 z-20`]}
         >

@@ -32,7 +32,7 @@ const Home = ({ categories }: IPropsHome) => {
   const [category, setCategory] = useState('')
   const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(false)
-  const [page, setPage] = useState(0)
+  const [page] = useState(0)
   const [books, setBooks] = useState<Book[]>([])
   const [viewBook, setViewBook] = useState<Book>()
 
