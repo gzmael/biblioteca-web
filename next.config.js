@@ -8,6 +8,6 @@ module.exports = {
     return config
   },
   images: {
-    domains: ['meudescontomania.com', 'localhost'],
+    domains: ['meudescontomania.com', 'localhost', 'www.datocms-assets.com'],
   },
 }

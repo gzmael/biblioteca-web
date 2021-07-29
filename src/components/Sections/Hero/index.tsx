@@ -37,7 +37,7 @@ const Hero = () => {
     <Container id="hero">
       <Content>
         <div className="texts">
-          <div className="logoBiblio">
+          {/* <div className="logoBiblio">
             <Image
               src="/assets/images/logo-vertical.svg"
               alt="Logo Biblioteca Pública Municipal de Várzea Alegre"
@@ -45,7 +45,7 @@ const Hero = () => {
               objectFit="contain"
               objectPosition="center"
             />
-          </div>
+          </div> */}
           <h1>Escolha, baixe e Leia!</h1>
           <p>
             Ficou ainda mais fácil encontrar aquele livro que tanto estava

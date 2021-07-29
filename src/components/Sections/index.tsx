@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Busca } from './Busca'
+import Busca from './Busca'
 import { ComoUsar } from './ComoUsar'
 import { Hero } from './Hero'
 
