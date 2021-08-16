@@ -10,7 +10,8 @@ import { Container, Content, Header, Grid } from './styles'
 const ComoUsar = () => {
   const { ref, inView } = useInView({
     threshold: 0,
-    delay: 300
+    delay: 300,
+    triggerOnce: true
   })
   const variants: Variants = {
     visible: i => ({

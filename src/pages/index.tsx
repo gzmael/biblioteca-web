@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState, useCallback } from 'react'
 
 import { AnimatePresence } from 'framer-motion'
@@ -21,6 +22,7 @@ import {
   Header,
   Books,
   BookItem,
+  BotaoCarregar,
   Modal
 } from '../styles/busca'
 
@@ -32,7 +34,9 @@ const Home = ({ categories }: IPropsHome) => {
   const [category, setCategory] = useState('')
   const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(false)
-  const [page] = useState(0)
+  const [page, setPage] = useState(0)
+  const [total, setTotal] = useState(0)
+  const [countView, setCountView] = useState(0)
   const [books, setBooks] = useState<Book[]>([])
   const [viewBook, setViewBook] = useState<Book>()
 
@@ -40,6 +44,9 @@ const Home = ({ categories }: IPropsHome) => {
     setLoading(true)
     async function getBooks() {
       const queryFilter = `{
+  _allBooksMeta {
+    count
+  }
   allBooks(
     orderBy: _createdAt_ASC,
     skip: 0,
@@ -67,12 +74,16 @@ const Home = ({ categories }: IPropsHome) => {
   }
 }`
 
-      setLoading(true)
       const data = await request({
         query: queryFilter
       })
 
-      setBooks(data.allBooks)
+      const newBooks = data.allBooks as Book[]
+      if (newBooks) {
+        setBooks(newBooks)
+        setCountView(newBooks.length)
+        setTotal(data._allBooksMeta.count)
+      }
     }
 
     getBooks()
@@ -80,64 +91,68 @@ const Home = ({ categories }: IPropsHome) => {
   }, [])
 
   const handleSearch = useCallback(async () => {
-    let filter = ''
+    let filterFields = ''
+    setPage(0)
+
     const allTerms = []
 
-    allTerms.push(`_status: {eq: published}`)
+    allTerms.push(`_status:{eq:published}`)
 
     if (category) {
-      allTerms.push(`categories:{matches:{pattern: "${category}"}}`)
+      allTerms.push(`categories:{matches:{pattern:"${category}"}}`)
     }
 
     if (search) {
-      filter = `  ${allTerms.join(',\n')}
-      title: {matches: {pattern: ".*${search}.*"}},
-      OR: {
-        ${allTerms.join(',')}
-        author:{ matches: {pattern: ".*${search}.*"}}
-      }`
+      filterFields = `  ${allTerms.join(',\n')}
+      title:{matches:{pattern:"${search}"}}`
     } else {
-      filter = allTerms.join(',\n')
+      filterFields = allTerms.join(',\n')
     }
 
-    const queryFilter = `
-{
-  allBooks(
-    orderBy: _createdAt_ASC,
-    skip: ${page},
-    filter: {
-      ${filter}
-    }
-  ) {
-    id
-    title
-    slug
-    author
-    categories
-    description
-    edition
-    publishedDate
-    pageNumber
-    publishingCompany
-    language
-    isbn13
-    _status
-    _firstPublishedAt
-    cover {
-      url
-    }
-    arquivo {
-      url
-    }
-  }
-}`
+    const queryFilter = `{
+      _allBooksMeta(
+        filter: { ${filterFields} }
+      ){
+        count
+      }
+      allBooks(
+        orderBy: _createdAt_ASC,
+        skip: ${page * 20},
+        filter: { ${filterFields} }
+      ) {
+        id
+        title
+        slug
+        author
+        categories
+        description
+        edition
+        publishedDate
+        pageNumber
+        publishingCompany
+        language
+        isbn13
+        downloads
+        _status
+        _firstPublishedAt
+        cover {
+          url
+        }
+        arquivo {
+          url
+        }
+      }
+    }`
 
     setLoading(true)
     const data = await request({
       query: queryFilter
     })
 
-    setBooks(data.allBooks)
+    const newBooks = data.allBooks as Book[]
+    setBooks(newBooks)
+    setCountView(newBooks.length)
+    setTotal(data._allBooksMeta.count)
 
     setLoading(false)
   }, [category, page, search])
@@ -146,17 +161,68 @@ const Home = ({ categories }: IPropsHome) => {
     setViewBook(book)
   }
 
+  async function handleGetMorePage() {
+    setPage(prev => prev + 1)
+    setLoading(true)
+    const queryFilter = `{
+      _allBooksMeta {
+        count
+      }
+      allBooks(
+        orderBy: _createdAt_ASC,
+        skip: ${(page + 1) * 20},
+      ) {
+        id
+        title
+        slug
+        author
+        categories
+        description
+        edition
+        publishedDate
+        pageNumber
+        publishingCompany
+        language
+        isbn13
+        downloads
+        _status
+        _firstPublishedAt
+        cover {
+          url
+        }
+        arquivo {
+          url
+        }
+      }
+    }`
+
+    const data = await request({
+      query: queryFilter
+    })
+
+    const newBooks = data.allBooks as Book[]
+    if (newBooks) {
+      setBooks(prev => [...prev, ...newBooks])
+      setCountView(prev => prev + newBooks.length)
+    }
+
+    setLoading(false)
+  }
+
   return (
     <Main>
       <SEO title="BPM Professor Almino Gabriel Viana" />
       <Hero />
-      <ComoUsar />
+
       <Container id="busca" className="element">
         <Content>
           <Header>
             <h2>Buscar Livro</h2>
             <span>Encontre, Baixe e Leia!</span>
           </Header>
+          <p>
+            {category} {search}
+          </p>
           <Search
             categories={categories}
             selected={category}
@@ -165,7 +231,7 @@ const Home = ({ categories }: IPropsHome) => {
             setSearch={setSearch}
             getSearch={handleSearch}
           />
-          {loading && 'Carregando livros...'}
+
           {!books && !loading && 'Nenhum livro encontrado'}
           {books && (
             <Books>
@@ -184,8 +250,15 @@ const Home = ({ categories }: IPropsHome) => {
               ))}
             </Books>
           )}
+          {loading && 'Carregando livros...'}
+          {books && countView < total && (
+            <BotaoCarregar type="button" onClick={handleGetMorePage}>
+              Carregar mais Livros
+            </BotaoCarregar>
+          )}
         </Content>
       </Container>
+      <ComoUsar />
       <AnimatePresence>
         {viewBook && (
           <Modal
@@ -236,19 +309,20 @@ const Home = ({ categories }: IPropsHome) => {
                       <span>Ref.:</span> {viewBook.isbn13}
                     </li>
                   </ul>
+                  <footer>
+                    <span>
+                      <IoDownloadOutline size={20} /> {viewBook.downloads || 0}{' '}
+                      downloads
+                    </span>
+                    <a
+                      href={viewBook.arquivo.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <IoBookOutline size={20} /> Baixar e Ler
+                    </a>
+                  </footer>
                 </div>
-                <footer>
-                  <span>
-                    <IoDownloadOutline size={20} /> 130 downloads
-                  </span>
-                  <a
-                    href={viewBook.arquivo.url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <IoBookOutline size={20} /> Baixar e Ler
-                  </a>
-                </footer>
               </div>
             </div>
           </Modal>

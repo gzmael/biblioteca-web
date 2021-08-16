@@ -20,6 +20,10 @@ export const Header = styled.header`
   }
 `
 
+export const BotaoCarregar = styled.button`
+  ${tw`bg-red-400 text-white font-bold px-8 py-2 rounded-lg`}
+`
+
 export const Books = styled.ul`
   ${tw`mt-2 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-items-center`}
 `
@@ -53,7 +57,7 @@ export const Modal = styled(motion.div)`
         ${tw`relative w-44 h-52 sm:h-40`}
       }
       .description {
-        ${tw`w-full flex flex-col mt-2 sm:mt-0`}
+        ${tw`w-full flex flex-col sm:flex-col mt-2 sm:mt-0`}
         h4 {
           ${tw`text-xl sm:text-lg font-bold leading-5`}
         }
@@ -72,20 +76,20 @@ export const Modal = styled(motion.div)`
             }
           }
         }
-      }
-      footer {
-        ${tw`w-full flex items-center justify-between mt-2`}
-        span, a {
-          ${tw`w-full flex justify-center items-center py-2`}
-        }
-        span {
-          ${tw`text-gray-500`}
-        }
-        a {
-          ${tw`bg-red-500 hover:bg-red-300 transition-all ease duration-300 text-white font-bold rounded`}
-        }
-        svg {
-          ${tw`mr-2`}
+        footer {
+          ${tw`w-full flex items-center justify-between mt-2`}
+          span, a {
+            ${tw`w-full flex justify-center items-center py-2`}
+          }
+          span {
+            ${tw`text-gray-500`}
+          }
+          a {
+            ${tw`bg-red-500 hover:bg-red-300 transition-all ease duration-300 text-white font-bold rounded`}
+          }
+          svg {
+            ${tw`mr-2`}
+          }
         }
       }
     }

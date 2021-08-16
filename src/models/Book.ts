@@ -11,6 +11,7 @@ interface Book {
   publishingCompany: string
   language: string
   isbn13: string
+  downloads: number
   cover: {
     url: string
     blurUpThumb: string
