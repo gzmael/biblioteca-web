@@ -26,7 +26,7 @@ const ComoUsar = () => {
     hidden: { opacity: 0, scale: 0.85 }
   }
   return (
-    <Container id="como-usar" ref={ref}>
+    <Container id="como-funciona" ref={ref}>
       <Content>
         <Header>
           <h2>Como Funciona?</h2>

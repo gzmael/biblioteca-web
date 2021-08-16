@@ -8,6 +8,7 @@ import {
   IoClose,
   IoLogoInstagram
 } from 'react-icons/io5'
+import { Link as LinkScroll } from 'react-scroll'
 
 import { Container } from './styles'
 
@@ -37,19 +38,14 @@ const MenuTop = () => {
         <nav>
           <ul className="menu_links">
             <li>
-              <Link href="/como">
-                <a>Como Funciona?</a>
-              </Link>
+              <LinkScroll to="como-funciona" smooth offset={50} duration={1000}>
+                Como Funciona?
+              </LinkScroll>
             </li>
             <li>
-              <Link href="/parceiros">
-                <a>Parceiros</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/politica/">
-                <a>Política de Privacidade</a>
-              </Link>
+              <LinkScroll to="parceiros" smooth offset={50} duration={1000}>
+                Parceiros
+              </LinkScroll>
             </li>
           </ul>
           <ul className="social_links">
