@@ -13,7 +13,7 @@ export const Container = styled.footer`
     ul {
       ${tw`mt-4 md:mt-0`}
       a {
-        ${tw`cursor-pointer text-sm text-gray-500 flex justify-center`}
+        ${tw`text-gray-500 hover:text-red-400 cursor-pointer text-sm flex justify-center transition-all ease duration-300`}
       }
     }
   }

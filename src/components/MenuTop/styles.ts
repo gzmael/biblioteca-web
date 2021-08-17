@@ -29,7 +29,7 @@ export const Container = styled.header`
       }
 
       ul li a {
-        ${tw`text-gray-500 hover:text-purple-500 border-none text-base font-semibold transition-all ease-linear duration-300`}
+        ${tw`cursor-pointer text-gray-500 hover:text-red-400 border-none text-base font-semibold transition-all ease-linear duration-300`}
       }
     }
 
