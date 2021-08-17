@@ -17,6 +17,7 @@ const Parceiros = () => {
             alt="Logo EEEP Dr José Iran Costa"
             layout="fill"
             objectFit="contain"
+            placeholder="blur"
           />
         </div>
         <div className="logo">
@@ -25,6 +26,7 @@ const Parceiros = () => {
             alt="Logo Curso Técnico em Informática"
             layout="fill"
             objectFit="contain"
+            placeholder="blur"
           />
         </div>
       </div>

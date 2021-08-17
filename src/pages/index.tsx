@@ -221,9 +221,6 @@ const Home = ({ categories }: IPropsHome) => {
             <h2>Buscar Livro</h2>
             <span>Encontre, Baixe e Leia!</span>
           </Header>
-          <p>
-            {category} {search}
-          </p>
           <Search
             categories={categories}
             selected={category}

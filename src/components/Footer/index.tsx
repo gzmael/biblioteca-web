@@ -28,7 +28,7 @@ const Footer = () => {
             </LinkScroll>
           </li>
           <li>
-            <LinkScroll to="pesquisar" smooth offset={50} duration={1000}>
+            <LinkScroll to="busca" smooth offset={50} duration={1000}>
               Pesquisar
             </LinkScroll>
           </li>
