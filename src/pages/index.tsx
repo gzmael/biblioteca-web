@@ -9,6 +9,7 @@ import { IoClose, IoDownloadOutline, IoBookOutline } from 'react-icons/io5'
 import { Search } from '@components/Search'
 import { ComoUsar } from '@components/Sections/ComoUsar'
 import { Hero } from '@components/Sections/Hero'
+import { Parceiros } from '@components/Sections/Parceiros'
 import { SEO } from '@components/SEO'
 import { ToTop } from '@components/ToTop'
 import { Main } from '@layouts/Main'
@@ -231,7 +232,6 @@ const Home = ({ categories }: IPropsHome) => {
             setSearch={setSearch}
             getSearch={handleSearch}
           />
-
           {!books && !loading && 'Nenhum livro encontrado'}
           {books && (
             <Books>
@@ -250,15 +250,15 @@ const Home = ({ categories }: IPropsHome) => {
               ))}
             </Books>
           )}
-          {loading && 'Carregando livros...'}
           {books && countView < total && (
             <BotaoCarregar type="button" onClick={handleGetMorePage}>
-              Carregar mais Livros
+              {loading ? 'Carregando livros...' : 'Carregar mais Livros'}
             </BotaoCarregar>
           )}
         </Content>
       </Container>
       <ComoUsar />
+      <Parceiros />
       <AnimatePresence>
         {viewBook && (
           <Modal

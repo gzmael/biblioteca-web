@@ -50,7 +50,7 @@ const MenuTop = () => {
           </ul>
           <ul className="social_links">
             <li>
-              <a href="https://facebook.com">
+              <a href="https://www.facebook.com/BibliotecaProfessorAlminoGabrielViana">
                 <IoLogoFacebook size={24} />
               </a>
             </li>

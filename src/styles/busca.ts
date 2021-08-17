@@ -30,7 +30,7 @@ export const Books = styled.ul`
 
 export const BookItem = styled.li`
   width: 228px;
-  ${tw`cursor-pointer bg-red-100 relative h-80 md:h-60 md:w-44 overflow-hidden shadow-md`}
+  ${tw`cursor-pointer bg-gray-200 relative h-80 md:h-60 md:w-44 overflow-hidden shadow-md`}
   a {
     ${tw`cursor-pointer relative h-80 md:h-60 md:w-44`}
     > div {

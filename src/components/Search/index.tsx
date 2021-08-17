@@ -62,7 +62,7 @@ const Search = ({
         </DropDown>
         <input
           type="search"
-          placeholder="Busque por Título, Autor ou Categoria..."
+          placeholder="Busque por Títulos"
           value={search}
           onChange={e => handleFilter(e.target.value)}
         />

@@ -38,7 +38,7 @@ export const DropDown = styled.div`
 `
 
 export const Button = styled.button`
-  ${tw`w-full sm:w-52 bg-red-500 hover:bg-red-300 text-white font-semibold py-2 px-4 rounded-full flex justify-center items-center text-sm shadow-md transition-all ease duration-300`}
+  ${tw`w-full sm:w-52 bg-red-400 hover:bg-red-300 text-white font-semibold py-2 px-4 rounded-full flex justify-center items-center text-sm shadow-md transition-all ease duration-300`}
   svg {
     ${tw`mr-1`}
   }
