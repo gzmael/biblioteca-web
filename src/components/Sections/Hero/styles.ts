@@ -3,7 +3,7 @@ import tw, { styled } from 'twin.macro'
 export const Container = styled.section`
   ${tw`relative flex flex-col items-center justify-center`}
   h1 {
-    ${tw`font-bold text-3xl text-red-400 text-center leading-10 mt-4`};
+    ${tw`font-bold text-3xl text-gray-900 text-center leading-10 mt-4`};
   }
 `
 
