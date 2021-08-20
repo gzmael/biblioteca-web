@@ -3,7 +3,7 @@ import React from 'react'
 import { Variants, motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
-import Authors from '../../../../public/assets/images/authors.svg'
+// import Authors from '../../../../public/assets/images/authors.svg'
 import Finding from '../../../../public/assets/images/finding.svg'
 import { Container, Content, Header, Grid } from './styles'
 
@@ -50,7 +50,7 @@ const ComoUsar = () => {
               <Finding />
             </div>
           </motion.li>
-          <motion.li
+          {/* <motion.li
             custom={1}
             animate={inView ? 'visible' : 'hidden'}
             variants={variants}
@@ -66,7 +66,7 @@ const ComoUsar = () => {
                 Várzea Alegre.
               </p>
             </div>
-          </motion.li>
+          </motion.li> */}
         </Grid>
       </Content>
     </Container>

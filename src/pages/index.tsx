@@ -137,7 +137,8 @@ const Home = ({ categories }: IPropsHome) => {
         _status
         _firstPublishedAt
         cover {
-          url
+          url,
+          blurUpThumb
         }
         arquivo {
           url
@@ -189,7 +190,8 @@ const Home = ({ categories }: IPropsHome) => {
         _status
         _firstPublishedAt
         cover {
-          url
+          url,
+          blurUpThumb
         }
         arquivo {
           url
@@ -230,25 +232,32 @@ const Home = ({ categories }: IPropsHome) => {
             getSearch={handleSearch}
           />
           {books.length === 0 && <h2>Nenhum livro encontrado.</h2>}
-          {books && (
+          {books.length > 0 && (
             <Books>
-              {books.map((book: Book) => (
-                <BookItem
-                  key={book.id}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <button type="button" onClick={() => handleModal(book)}>
-                    <Image
-                      src={book.cover.url}
-                      alt={`Capa do livro ${book.title}`}
-                      layout="fill"
-                      objectFit="cover"
-                      quality={95}
-                    />
-                  </button>
-                </BookItem>
-              ))}
+              {books.map((book: Book) => {
+                return (
+                  <BookItem
+                    key={book.id}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <button type="button" onClick={() => handleModal(book)}>
+                      <Image
+                        src={book.cover.url}
+                        alt={`Capa do livro ${book.title}`}
+                        layout="fill"
+                        objectFit="cover"
+                        quality={95}
+                        placeholder="blur"
+                        blurDataURL={
+                          book.cover.blurUpThumb ||
+                          `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICBAWFgoNDhgOEA0NEBUOFREYFx8lGBYfFiEmHysjGh0oHRUWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0FHBAQHC8pIig7Ozs7Oy8vNS87Njs7Ozs7OzsvLy81Ly8vLzs7OzsvLy8vLy8vLzUvLy8vLy8vLy8vL//AABEIABgAEQMBIgACEQEDEQH/xAAYAAADAQEAAAAAAAAAAAAAAAAABQYBBP/EACAQAAIDAAAHAQAAAAAAAAAAAAACAQMEERITFDFRYQX/xAAYAQACAwAAAAAAAAAAAAAAAAACBQEDBP/EAB8RAAEDAwUAAAAAAAAAAAAAAAEAAhEDBAUGExQlgf/aAAwDAQACEQMRAD8AfZ9K10TxJu3Qr/qy0ezp1XvXnblJ7Fa76JafPE12bwMYSgyNMu1IGeqp68ALedzSN5qLjlMbs8PRIhzZ4XfK/QAXU3EWUJjcDtJTrt4MACuSjhf/2Q==`
+                        }
+                      />
+                    </button>
+                  </BookItem>
+                )
+              })}
             </Books>
           )}
           {books && countView < total && (
@@ -282,6 +291,8 @@ const Home = ({ categories }: IPropsHome) => {
                     alt={`Capa do livro ${viewBook.title}`}
                     layout="fill"
                     objectFit="contain"
+                    placeholder="blur"
+                    blurDataURL={viewBook.cover.blurUpThumb as string}
                   />
                 </div>
                 <div className="description">

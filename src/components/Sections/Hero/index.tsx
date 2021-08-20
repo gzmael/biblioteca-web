@@ -35,6 +35,10 @@ const Hero = () => {
 
   return (
     <Container id="hero">
+      <h1>
+        Biblioteca Digital da <br />
+        Biblioteca Pública de Várzea Alegre
+      </h1>
       <Content>
         <div className="texts">
           <blockquote>
@@ -45,8 +49,8 @@ const Hero = () => {
               isso em palavras, expressões e frases que educam, informando e,
               sobretudo, formando o ser humano. Quem lê conhece e produz ideias.
               Quem lê melhora a vida, prolonga. Essas possibilidades de uma nova
-              vida, um novo olhar sobre nós mesmos e o mundo, estão bem próximo
-              de todos nós, está nos livros, nas palavras geradoras de
+              vida, um novo olhar sobre nós mesmos e o mundo, estão bem próximos
+              de todos nós, estão nos livros, nas palavras geradoras de
               conhecimento, espírito crítico e poder de transformação&quot;
             </em>{' '}
             &ndash; Dagoberto Diniz

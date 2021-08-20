@@ -1,7 +1,10 @@
 import tw, { styled } from 'twin.macro'
 
 export const Container = styled.section`
-  ${tw`relative flex items-center justify-center`}
+  ${tw`relative flex flex-col items-center justify-center`}
+  h1 {
+    ${tw`font-bold text-3xl text-red-400 text-center leading-10 mt-4`};
+  }
 `
 
 export const Content = styled.div`
@@ -13,9 +16,7 @@ export const Content = styled.div`
     .logoBiblio {
       ${tw`relative w-1/2 h-24`}
     }
-    h1 {
-      ${tw`font-bold text-3xl text-red-300 text-center leading-10`};
-    }
+
     blockquote {
       ${tw`text-center leading-5 text-gray-600`}
     }
