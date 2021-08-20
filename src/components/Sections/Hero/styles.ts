@@ -22,7 +22,7 @@ export const Content = styled.div`
 
     .buttons {
       a {
-        ${tw`cursor-pointer flex items-center justify-center h-10 px-10 py-2 bg-red-400 hover:bg-red-300 text-white font-bold w-full rounded`};
+        ${tw`cursor-pointer flex items-center justify-center h-10 px-10 py-2 bg-red-400 hover:bg-red-300 text-white font-bold w-full rounded transition-all ease duration-300`};
         svg {
           ${tw`mr-2`}
         }

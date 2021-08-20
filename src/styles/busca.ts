@@ -25,7 +25,7 @@ export const Header = styled.header`
 `
 
 export const BotaoCarregar = styled.button`
-  ${tw`bg-red-400 text-white font-bold px-8 py-2 rounded-lg`}
+  ${tw`bg-red-400 hover:bg-red-300 transition-all ease duration-300 text-white font-bold px-8 py-2 rounded-lg`}
 `
 
 export const Books = styled.ul`

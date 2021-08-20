@@ -67,7 +67,7 @@ const Footer = () => {
         <span role="img" aria-label="Love">
           ❤️
         </span>{' '}
-        pela{' '}
+        pelo Curso Técnico de Informática da{' '}
         <a href="https://www.facebook.com/eeepdoutorjoseirancosta">
           EEEP Dr José Iran Costa
         </a>
