@@ -16,7 +16,7 @@ export const Content = styled.div`
     h1 {
       ${tw`font-bold text-3xl text-red-300 text-center leading-10`};
     }
-    p {
+    blockquote {
       ${tw`text-center leading-5 text-gray-600`}
     }
 

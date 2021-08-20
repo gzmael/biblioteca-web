@@ -59,11 +59,11 @@ a:hover {
 }
 
 section {
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 section#hero {
-  min-height: 600px;
+  min-height: 550px;
 }
 
 `

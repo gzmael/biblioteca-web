@@ -37,21 +37,20 @@ const Hero = () => {
     <Container id="hero">
       <Content>
         <div className="texts">
-          {/* <div className="logoBiblio">
-            <Image
-              src="/assets/images/logo-vertical.svg"
-              alt="Logo Biblioteca Pública Municipal de Várzea Alegre"
-              layout="fill"
-              objectFit="contain"
-              objectPosition="center"
-            />
-          </div> */}
-          <h1>Escolha, baixe e Leia!</h1>
-          <p>
-            Ficou ainda mais fácil encontrar aquele livro que tanto estava
-            querendo ler. Encontre aqui as principais obras que estão no Domínio
-            Público.
-          </p>
+          <blockquote>
+            <em>
+              &quot;A leitura dos bons livros é sempre um passeio por diferentes
+              lugares, culturas diversas, modos de ser, visões de mundo, e a
+              aprendizagem das formas e estilos singulares que materializam tudo
+              isso em palavras, expressões e frases que educam, informando e,
+              sobretudo, formando o ser humano. Quem lê conhece e produz ideias.
+              Quem lê melhora a vida, prolonga. Essas possibilidades de uma nova
+              vida, um novo olhar sobre nós mesmos e o mundo, estão bem próximo
+              de todos nós, está nos livros, nas palavras geradoras de
+              conhecimento, espírito crítico e poder de transformação&quot;
+            </em>{' '}
+            &ndash; Dagoberto Diniz
+          </blockquote>
           <div className="buttons">
             <Link to="busca" smooth offset={50} duration={1000}>
               <IoSearch size={24} /> Buscar Livro

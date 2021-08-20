@@ -6,6 +6,10 @@ export const Container = styled.section`
 `
 export const Content = styled.main`
   ${tw`max-w-screen-lg mx-auto flex flex-col items-center justify-start space-y-4`}
+
+  h2 {
+    ${tw`text-2xl`}
+  }
 `
 
 export const Header = styled.header`

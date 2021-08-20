@@ -229,7 +229,7 @@ const Home = ({ categories }: IPropsHome) => {
             setSearch={setSearch}
             getSearch={handleSearch}
           />
-          {!books && !loading && 'Nenhum livro encontrado'}
+          {books.length === 0 && <h2>Nenhum livro encontrado.</h2>}
           {books && (
             <Books>
               {books.map((book: Book) => (
