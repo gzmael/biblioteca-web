@@ -233,7 +233,11 @@ const Home = ({ categories }: IPropsHome) => {
           {books && (
             <Books>
               {books.map((book: Book) => (
-                <BookItem key={book.id}>
+                <BookItem
+                  key={book.id}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
                   <button type="button" onClick={() => handleModal(book)}>
                     <Image
                       src={book.cover.url}

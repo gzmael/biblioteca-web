@@ -32,10 +32,10 @@ export const Books = styled.ul`
   ${tw`mt-2 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-items-center`}
 `
 
-export const BookItem = styled.li`
+export const BookItem = styled(motion.li)`
   width: 228px;
   ${tw`cursor-pointer bg-gray-200 relative h-80 md:h-60 md:w-44 overflow-hidden shadow-md`}
-  a {
+  button {
     ${tw`cursor-pointer relative h-80 md:h-60 md:w-44`}
     > div {
       width: 228px;
