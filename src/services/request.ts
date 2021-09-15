@@ -7,7 +7,6 @@ interface IRequest {
 }
 
 export function request({ query, variables, preview }: IRequest) {
-  console.log(`API_TOKEN: ${process.env.NEXT_PUBLIC_DATOCMS_TOKEN}`)
   const endpoint = preview
     ? `https://graphql.datocms.com/preview`
     : `https://graphql.datocms.com/`
